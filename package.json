@@ -1,5 +1,5 @@
 {
-  "name": "next-build-image",
+  "name": "microcms-richedit-processer",
   "version": "0.1.0",
   "main": "index.js",
   "repository": "git@github.com:dc7290/microcms-richedit-processer.git",

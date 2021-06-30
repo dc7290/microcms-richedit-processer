@@ -1,9 +1,9 @@
 import merge from 'deepmerge'
 import { parse } from 'node-html-parser'
 
-import { Options } from './types'
+import { ProcesserOptions } from './types'
 
-const defaultOptions: Options = {
+const defaultOptions: ProcesserOptions = {
   img: {
     lazy: true,
     placeholder: true,
@@ -15,7 +15,7 @@ const defaultOptions: Options = {
   },
 }
 
-const processer = (content: string, options: Options = {}): string => {
+const processer = (content: string, options: ProcesserOptions = {}): string => {
   const processOptions = merge(defaultOptions, options)
   const root = parse(content)
 

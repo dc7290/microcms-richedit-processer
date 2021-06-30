@@ -20,7 +20,12 @@ type IframeOptions = {
       provider?: 'lazysizes'
     }
 )
-export type Options = {
+export type ProcesserOptions = {
   img?: ImgOptions
   iframe?: IframeOptions
+}
+
+export type CreateTableOfContentsOptions = {
+  tags?: string
+  dataForName?: 'tagName' | false
 }
