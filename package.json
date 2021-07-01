@@ -8,7 +8,8 @@
     "richedit",
     "preprocesser"
   ],
-  "repository": "git@github.com:dc7290/microcms-richedit-processer.git",
+  "homepage": "https://github.com/dc7290/microcms-richedit-processer#readme",
+  "repository": "https://github.com/dc7290/microcms-richedit-processer",
   "license": "MIT",
   "author": "dc7290",
   "sideEffects": false,
