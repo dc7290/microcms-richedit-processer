@@ -8,6 +8,15 @@ const iframeProcesser = (
 ): void => {
   const processerFunctions: ((iframe: HTMLElement) => void)[] = []
 
+  if (options.iframe.addClassName !== undefined) {
+    const classNames = options.iframe.addClassName
+    processerFunctions.push((iframe: HTMLElement) => {
+      classNames.forEach((className) => {
+        iframe.classList.add(className)
+      })
+    })
+  }
+
   if (options.iframe.provider === 'lazysizes') {
     if (options.iframe.lazy) {
       processerFunctions.push((iframe) => {
@@ -19,6 +28,7 @@ const iframeProcesser = (
 
         iframe.setAttribute('data-src', src)
         iframe.removeAttribute('src')
+        iframe.classList.add('lazyload')
       })
     }
 

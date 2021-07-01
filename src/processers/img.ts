@@ -20,14 +20,35 @@ const imgProcesser = (
   }
 
   processerFunctions.push((img: HTMLElement) => {
-    const splitSrc = returnSrc(img).split('?')
-    img.setAttribute(
-      'src',
+    const src = returnSrc(img)
+    const splitSrc = src.split('?')
+
+    const imgixUrl =
       splitSrc.length === 1
         ? buildImgixUrl(splitSrc[0])(options.img.parameters)
         : buildImgixUrl(splitSrc[0])(options.img.parameters) + '&' + splitSrc[1]
-    )
+    img.setAttribute('src', imgixUrl)
+
+    const url = new URL(imgixUrl)
+    const params = new URLSearchParams(url.search)
+    const width = params.get('w')
+    const height = params.get('h')
+    if (width !== null) {
+      img.setAttribute('width', width)
+    }
+    if (height !== null) {
+      img.setAttribute('height', height)
+    }
   })
+
+  if (options.img.addClassName !== undefined) {
+    const classNames = options.img.addClassName
+    processerFunctions.push((img: HTMLElement) => {
+      classNames.forEach((className) => {
+        img.classList.add(className)
+      })
+    })
+  }
 
   if (options.img.provider === 'lazysizes') {
     if (options.img.lazy) {

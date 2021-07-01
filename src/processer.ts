@@ -13,7 +13,7 @@ const defaultOptions = {
         format: true,
       },
     },
-    placeholder: true,
+    placeholder: false,
     provider: 'lazysizes',
   },
   iframe: {

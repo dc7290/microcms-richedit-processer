@@ -2,6 +2,7 @@ import { QueryParamsInput } from 'ts-imgix'
 
 type ImgOptions = {
   parameters?: QueryParamsInput
+  addClassName?: string[]
 } & (
   | {
       lazy?: false
@@ -16,6 +17,7 @@ type ImgOptions = {
 type IframeOptions = {
   width?: number
   height?: number
+  addClassName?: string[]
 } & (
   | {
       lazy?: false
