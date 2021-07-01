@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
-    "node-html-parser": "^3.3.6"
+    "node-html-parser": "^3.3.6",
+    "ts-imgix": "^0.0.15"
   }
 }

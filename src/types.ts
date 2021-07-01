@@ -1,4 +1,8 @@
-type ImgOptions =
+import { QueryParamsInput } from 'ts-imgix'
+
+type ImgOptions = {
+  parameters?: QueryParamsInput
+} & (
   | {
       lazy?: false
     }
@@ -7,6 +11,7 @@ type ImgOptions =
       placeholder?: boolean
       provider?: 'lazysizes'
     }
+)
 
 type IframeOptions = {
   width?: number

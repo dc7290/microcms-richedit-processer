@@ -4,14 +4,24 @@ describe('Process the `img`', () => {
   it('lazysizes: normal', () => {
     const initialContent = '<img src="https://sample.com/image.png" alt>'
     const processedContent =
-      '<img src="https://sample.com/image.png?w=50&q=30" alt data-src="https://sample.com/image.png" style="width: 100%">'
+      '<img src="https://sample.com/image.png?w=50&q=30" alt data-src="https://sample.com/image.png?auto=format" class="lazyload" style="width: 100%">'
     const result = processer(initialContent)
+    expect(result).toBe(processedContent)
+  })
+
+  it('lazysizes: with parameters', () => {
+    const initialContent =
+      '<img src="https://sample.com/image.png?w=800&h=600" alt>'
+    const processedContent =
+      '<img alt data-src="https://sample.com/image.png?auto=format&w=800&h=600" class="lazyload">'
+    const result = processer(initialContent, { img: { placeholder: false } })
     expect(result).toBe(processedContent)
   })
 
   it('lazysizes: placeholder disabled', () => {
     const initialContent = '<img src="https://sample.com/image.png" alt>'
-    const processedContent = '<img alt data-src="https://sample.com/image.png">'
+    const processedContent =
+      '<img alt data-src="https://sample.com/image.png?auto=format" class="lazyload">'
     const result = processer(initialContent, { img: { placeholder: false } })
     expect(result).toBe(processedContent)
   })

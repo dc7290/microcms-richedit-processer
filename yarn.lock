@@ -644,6 +644,11 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-15.12.4.tgz"
   integrity sha512-zrNj1+yqYF4WskCMOHwN+w9iuD12+dGm0rQ35HLl9/Ouuq52cEtd0CH9qMgrdNmi5ejC1/V7vKEXYubB+65DkA==
 
+"@types/node@^14.14.16":
+  version "14.17.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.4.tgz#218712242446fc868d0e007af29a4408c7765bc0"
+  integrity sha512-8kQ3+wKGRNN0ghtEn7EGps/B8CzuBz1nXZEIGGLP2GnwbqYn4dbTs7k+VKLTq1HvZLRCIDtN3Snx1Ege8B7L5A==
+
 "@types/prettier@^2.1.5":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@types/prettier/-/prettier-2.3.0.tgz"
@@ -1570,6 +1575,11 @@ form-data@^3.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+fp-ts@^2.9.2:
+  version "2.10.5"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-2.10.5.tgz#7c77868fe8bd9b229743303c1bec505b959f631b"
+  integrity sha512-X2KfTIV0cxIk3d7/2Pvp/pxL/xr2MV1WooyEzKtTWYSc1+52VF4YzjBTXqeOlSiZsPCxIBpDGfT9Dyo7WEY0DQ==
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
@@ -2495,6 +2505,11 @@ mkdirp@1.x:
   resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
+monocle-ts@^2.3.3:
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/monocle-ts/-/monocle-ts-2.3.10.tgz#f5edaacc459103ab6dda07ed0e297f0cd6455ed8"
+  integrity sha512-UvzfU1LR0XMfPN0ySPvMhIu54mzfuAzoggtIOc2JlEAfnR6sfv/5zGkxrNtYvLNYzm5bo/qc1v0DlUq4VlzE0g==
+
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz"
@@ -3049,6 +3064,13 @@ tr46@^2.1.0:
   dependencies:
     punycode "^2.1.1"
 
+ts-imgix@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/ts-imgix/-/ts-imgix-0.0.15.tgz#c0637b6056cbe1c2f02f8950e8bd40e7dc63dad1"
+  integrity sha512-f8nbGVTfu3g0B1dyofYfvPsNb/w76Y34Za2Dgvyv6HCPwQNVwXKUdqCCMKrdZ27cOfhWupN8vdVNsr2RFc80sg==
+  dependencies:
+    url-transformers "^0.0.10"
+
 ts-jest@^27.0.3:
   version "27.0.3"
   resolved "https://registry.npmjs.org/ts-jest/-/ts-jest-27.0.3.tgz"
@@ -3129,6 +3151,15 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+url-transformers@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/url-transformers/-/url-transformers-0.0.10.tgz#c2f430e9f482dd456a28ea0340f5deab1584e7b7"
+  integrity sha512-n8lEJ560tGbpKhisR+l4dqKf+owzTDRSMIQXT9/BWdEUjt8dtG0TMoaabFT8CsHINvMxsyWKui5ehId3raAPog==
+  dependencies:
+    "@types/node" "^14.14.16"
+    fp-ts "^2.9.2"
+    monocle-ts "^2.3.3"
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
