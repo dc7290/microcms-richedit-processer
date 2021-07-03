@@ -31,21 +31,25 @@ const iframeProcesser = (
         iframe.classList.add('lazyload')
       })
     }
-
-    if (options.iframe.width !== undefined) {
-      const width = options.iframe.width
-      processerFunctions.push((iframe) => {
-        iframe.setAttribute('width', width.toString())
-      })
-    }
-
-    if (options.iframe.height !== undefined) {
-      const height = options.iframe.height
-      processerFunctions.push((iframe) => {
-        iframe.setAttribute('height', height.toString())
-      })
-    }
   }
+
+  processerFunctions.push((iframe) => {
+    const width =
+      options.iframe.width ?? Number(iframe.getAttribute('width')) ?? 640
+    const height =
+      options.iframe.height ?? Number(iframe.getAttribute('height')) ?? 360
+    iframe.setAttribute('width', width.toString())
+    iframe.setAttribute('height', height.toString())
+    iframe.setAttribute(
+      'style',
+      'position: absolute; width: 100%; height: 100%; top: 0; left: 0;'
+    )
+
+    const divElement = `<div style="position: relative; padding-bottom: calc(${height} / ${width} * 100%);">${iframe.outerHTML}</div>`
+
+    iframe.insertAdjacentHTML('beforebegin', divElement)
+    iframe.remove()
+  })
 
   iframeElements.forEach((iframe) => {
     processerFunctions.forEach((processerFunction) => processerFunction(iframe))
