@@ -29,7 +29,7 @@ describe('Process the `img`', () => {
     expect(result).toBe(processedContent)
   })
 
-  it('lazysizes: placeholder disabled', () => {
+  it('lazysizes: placeholder enabled', () => {
     const initialContent = '<img src="https://sample.com/image.png" alt>'
     const processedContent =
       '<img src="https://sample.com/image.png?w=50&q=30" alt data-src="https://sample.com/image.png?auto=format" class="lazyload" style="width: 100%">'
