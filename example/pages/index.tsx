@@ -23,7 +23,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       dataBeforeProcessing: data.body,
       dataAfterProcessing: processer(data.body, {
         img: {
-          addClassName: ['w-full'],
+          addClassName: ['w-full', 'h-auto'],
           parameters: {
             w: 800,
             h: 600,
@@ -51,8 +51,25 @@ const IndexPage: NextPage<Props> = ({
         .w-full {
           width: 100%;
         }
+        .h-auto {
+          height: auto;
+        }
+        .container {
+          width: 85vw;
+          margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+          .container {
+            width: 720px;
+          }
+        }
+        @media (min-width: 1280px) {
+          .container {
+            width: 1180px;
+          }
+        }
       `}</style>
-      <main style={{ width: '1180px', margin: '0 auto' }}>
+      <main className="container">
         <section>
           <h1>
             {'<'}加工前{'>'}
