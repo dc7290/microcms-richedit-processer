@@ -18,18 +18,18 @@ type ImgOptions = CommonOptinos & {
       }
   )
 
-type IframeOptions = {
+type IframeOptions = CommonOptinos & {
   width?: number
   height?: number
 } & (
-  | {
-      lazy?: false
-    }
-  | {
-      lazy?: true
-      provider?: 'lazysizes'
-    }
-)
+    | {
+        lazy?: false
+      }
+    | {
+        lazy?: true
+        provider?: 'lazysizes'
+      }
+  )
 
 type CodeOptions = CommonOptinos & {
   lib?: 'highlight.js'
