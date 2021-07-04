@@ -1,17 +1,15 @@
 import { HTMLElement } from 'node-html-parser'
+import requestImageSize from 'request-image-size'
 import { buildImgixUrl } from 'ts-imgix'
 
 import { MergedDefaultOptions } from '../processer'
 
-const imgProcesser = (
-  imgElements: HTMLElement[],
+const imgProcesser = async (
+  imgElement: HTMLElement,
   options: MergedDefaultOptions
-): void => {
-  const processerFunctions: ((img: HTMLElement) => void)[] = []
-
-  const returnSrc = (img: HTMLElement): string => {
-    const src = img.getAttribute('src')
-
+): Promise<void> => {
+  const getSrcAttr = () => {
+    const src = imgElement.getAttribute('src')
     if (src === undefined) {
       throw Error('Some of the img tags do not have src set.')
     }
@@ -19,60 +17,49 @@ const imgProcesser = (
     return src
   }
 
-  processerFunctions.push((img: HTMLElement) => {
-    const src = returnSrc(img)
-    const splitSrc = src.split('?')
+  const splitSrc = getSrcAttr().split('?')
 
-    const imgixUrl =
-      splitSrc.length === 1
-        ? buildImgixUrl(splitSrc[0])(options.img.parameters)
-        : buildImgixUrl(splitSrc[0])(options.img.parameters) + '&' + splitSrc[1]
-    img.setAttribute('src', imgixUrl)
+  const size = await requestImageSize(splitSrc[0])
+  const imgixUrl = buildImgixUrl(splitSrc[0])(
+    Object.assign({}, new URLSearchParams(splitSrc[1]), options.img.parameters)
+  )
+  imgElement.setAttribute('src', imgixUrl)
 
-    const url = new URL(imgixUrl)
-    const params = new URLSearchParams(url.search)
-    const width = params.get('w')
-    const height = params.get('h')
-    if (width !== null) {
-      img.setAttribute('width', width)
-    }
-    if (height !== null) {
-      img.setAttribute('height', height)
-    }
-  })
+  const params = new URLSearchParams(new URL(imgixUrl).search)
+  const width = params.get('w')
+  const height = params.get('h')
+
+  if (width === null) {
+    imgElement.setAttribute('width', size.width)
+  } else {
+    imgElement.setAttribute('width', width)
+  }
+  if (height === null) {
+    imgElement.setAttribute('height', size.height)
+  } else {
+    imgElement.setAttribute('height', height)
+  }
 
   if (options.img.addClassName !== undefined) {
     const classNames = options.img.addClassName
-    processerFunctions.push((img: HTMLElement) => {
-      classNames.forEach((className) => {
-        img.classList.add(className)
-      })
+    classNames.forEach((className) => {
+      imgElement.classList.add(className)
     })
   }
 
   if (options.img.provider === 'lazysizes') {
     if (options.img.lazy) {
-      processerFunctions.push((img: HTMLElement) => {
-        img.setAttribute('data-src', returnSrc(img))
-        img.classList.add('lazyload')
-      })
+      imgElement.setAttribute('data-src', getSrcAttr())
+      imgElement.classList.add('lazyload')
     }
 
     if (options.img.placeholder) {
-      processerFunctions.push((img) => {
-        img.setAttribute('src', returnSrc(img).split('?')[0] + '?w=50&q=30')
-        img.setAttribute('style', 'width: 100%')
-      })
+      imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30')
+      imgElement.setAttribute('style', 'width: 100%')
     } else {
-      processerFunctions.push((img) => {
-        img.removeAttribute('src')
-      })
+      imgElement.removeAttribute('src')
     }
   }
-
-  imgElements.forEach((img) => {
-    processerFunctions.forEach((processeFunction) => processeFunction(img))
-  })
 }
 
 export default imgProcesser

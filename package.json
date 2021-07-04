@@ -27,11 +27,12 @@
     "build:esm": "tsc --outDir esm --module esNext",
     "lint": "eslint . --cache",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch --detectOpenHandles"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
     "node-html-parser": "^3.3.6",
+    "request-image-size": "^2.2.0",
     "ts-imgix": "^0.0.15"
   },
   "devDependencies": {

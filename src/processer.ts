@@ -31,21 +31,36 @@ const defaultOptions = {
 
 export type MergedDefaultOptions = typeof defaultOptions & ProcesserOptions
 
-const processer = (content: string, options: ProcesserOptions = {}): string => {
+const processer = async (
+  content: string,
+  options: ProcesserOptions = {}
+): Promise<string> => {
   const processOptions = merge(defaultOptions, options)
 
   const root = parse(content)
 
   if (!processOptions.img.disabled) {
-    imgProcesser(root.querySelectorAll('img'), processOptions)
+    await Promise.all(
+      root
+        .querySelectorAll('img')
+        .map((imgElement) => imgProcesser(imgElement, processOptions))
+    )
   }
 
   if (!processOptions.iframe.disabled) {
-    iframeProcesser(root.querySelectorAll('iframe'), processOptions)
+    await Promise.all(
+      root
+        .querySelectorAll('iframe')
+        .map((iframeElement) => iframeProcesser(iframeElement, processOptions))
+    )
   }
 
   if (!processOptions.code.disabled) {
-    codeProcesser(root.querySelectorAll('pre code'), processOptions)
+    await Promise.all(
+      root
+        .querySelectorAll('pre code')
+        .map((codeElement) => codeProcesser(codeElement, processOptions))
+    )
   }
 
   return root.toString()
