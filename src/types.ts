@@ -7,6 +7,8 @@ type CommonOptinos = {
 
 type ImgOptions = CommonOptinos & {
   parameters?: QueryParamsInput
+  deviceSizes?: number[]
+  sizes?: string
 } & (
     | {
         lazy?: false

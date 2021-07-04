@@ -8,13 +8,15 @@ import { ProcesserOptions } from './types'
 
 const defaultOptions = {
   img: {
-    disabled: false,
-    lazy: true,
     parameters: {
       auto: {
         format: true,
       },
     },
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    sizes: '100vw',
+    disabled: false,
+    lazy: true,
     placeholder: false,
     provider: 'lazysizes',
   },
@@ -35,7 +37,9 @@ const processer = async (
   content: string,
   options: ProcesserOptions = {}
 ): Promise<string> => {
-  const processOptions = merge(defaultOptions, options)
+  const processOptions = merge(defaultOptions, options, {
+    arrayMerge: (_, sourceArray) => sourceArray,
+  })
 
   const root = parse(content)
 

@@ -20,14 +20,37 @@ const imgProcesser = async (
   const splitSrc = getSrcAttr().split('?')
 
   const size = await requestImageSize(splitSrc[0])
-  const imgixUrl = buildImgixUrl(splitSrc[0])(
-    Object.assign({}, new URLSearchParams(splitSrc[1]), options.img.parameters)
+  const imgixParams = Object.assign(
+    {},
+    new URLSearchParams(splitSrc[1]),
+    options.img.parameters
   )
-  imgElement.setAttribute('src', imgixUrl)
+  const imgixUrl = buildImgixUrl(splitSrc[0])(imgixParams)
 
   const params = new URLSearchParams(new URL(imgixUrl).search)
   const width = params.get('w')
   const height = params.get('h')
+
+  const srcset = options.img.deviceSizes
+    .map((size) => {
+      const imgixParamsForSrcSet = Object.assign(imgixParams, {
+        w: size.toString(),
+        h: undefined,
+      })
+
+      if (width !== null && height !== null) {
+        Object.assign(imgixParamsForSrcSet, {
+          h: Math.round(size * (Number(height) / Number(width))).toString(),
+        })
+      }
+
+      return `${buildImgixUrl(splitSrc[0])(imgixParamsForSrcSet)} ${size}w`
+    })
+    .join(', ')
+
+  imgElement.setAttribute('src', imgixUrl)
+  imgElement.setAttribute('srcset', srcset)
+  imgElement.setAttribute('sizes', options.img.sizes)
 
   if (width === null) {
     imgElement.setAttribute('width', size.width)
@@ -50,14 +73,24 @@ const imgProcesser = async (
   if (options.img.provider === 'lazysizes') {
     if (options.img.lazy) {
       imgElement.setAttribute('data-src', getSrcAttr())
+      imgElement.setAttribute(
+        'data-srcset',
+        imgElement.getAttribute('srcset') ?? ''
+      )
+      imgElement.setAttribute(
+        'data-sizes',
+        imgElement.getAttribute('sizes') ?? ''
+      )
+      imgElement.removeAttribute('srcset')
+      imgElement.removeAttribute('sizes')
       imgElement.classList.add('lazyload')
-    }
 
-    if (options.img.placeholder) {
-      imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30')
-      imgElement.setAttribute('style', 'width: 100%')
-    } else {
-      imgElement.removeAttribute('src')
+      if (options.img.placeholder) {
+        imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30')
+        imgElement.setAttribute('style', 'width: 100%')
+      } else {
+        imgElement.removeAttribute('src')
+      }
     }
   }
 }
