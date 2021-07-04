@@ -1,23 +1,26 @@
 import { QueryParamsInput } from 'ts-imgix'
 
-type ImgOptions = {
-  parameters?: QueryParamsInput
+type CommonOptinos = {
+  disabled?: boolean
   addClassName?: string[]
+}
+
+type ImgOptions = CommonOptinos & {
+  parameters?: QueryParamsInput
 } & (
-  | {
-      lazy?: false
-    }
-  | {
-      lazy?: true
-      placeholder?: boolean
-      provider?: 'lazysizes'
-    }
-)
+    | {
+        lazy?: false
+      }
+    | {
+        lazy?: true
+        placeholder?: boolean
+        provider?: 'lazysizes'
+      }
+  )
 
 type IframeOptions = {
   width?: number
   height?: number
-  addClassName?: string[]
 } & (
   | {
       lazy?: false
@@ -27,9 +30,15 @@ type IframeOptions = {
       provider?: 'lazysizes'
     }
 )
+
+type CodeOptions = CommonOptinos & {
+  lib?: 'highlight.js'
+}
+
 export type ProcesserOptions = {
   img?: ImgOptions
   iframe?: IframeOptions
+  code?: CodeOptions
 }
 
 export type CreateTableOfContentsOptions = {

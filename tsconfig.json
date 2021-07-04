@@ -17,7 +17,6 @@
     "paths": {
       "~/*": ["./*"]
     },
-    "outDir": "./lib",
     "declaration": true
   },
   "exclude": ["node_modules", "**/*.test.ts", "example"],
