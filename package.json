@@ -27,7 +27,7 @@
     "build:esm": "tsc --outDir esm --module esNext",
     "lint": "eslint . --cache",
     "test": "jest",
-    "test:watch": "jest --watch --detectOpenHandles"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
