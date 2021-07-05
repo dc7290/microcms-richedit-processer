@@ -99,3 +99,16 @@ describe('Process the `iframe`', () => {
     expect(result).toBe(processedContent)
   })
 })
+
+describe('Process the `pre code`', () => {
+  it('highlight.js', async () => {
+    const initialContent =
+      '<pre><code>import { AppProps } from &#x27;next&#x2F;app&#x27;\n\nconst MyApp = ({ Component, pageProps }: AppProps): JSX.Element =&gt; {\n  return &lt;Component {...pageProps} &#x2F;&gt;\n}\n\nexport default MyApp</code></pre>'
+    const processedContent =
+      '<pre><code class="hljs"><span class="hljs-keyword">import</span> { AppProps } from <span class="hljs-string">&#x27;next/app&#x27;</span>\n\n<span class="hljs-keyword">const</span> MyApp = ({ Component, pageProps }: AppProps): JSX.<span class="hljs-built_in">Element</span> =&gt; {\n  <span class="hljs-keyword">return</span> &lt;Component {...pageProps} /&gt;\n}\n\n<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> MyApp</code></pre>'
+    const result = await processer(initialContent, {
+      code: { enabled: true },
+    })
+    expect(result).toBe(processedContent)
+  })
+})

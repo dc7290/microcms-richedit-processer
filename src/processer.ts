@@ -41,13 +41,19 @@ const processer = async (
     arrayMerge: (_, sourceArray) => sourceArray,
   })
 
-  const root = parse(content)
+  const root = parse(content, {
+    blockTextElements: {
+      code: true,
+    },
+  })
 
   if (processOptions.img.enabled) {
     await Promise.all(
       root
         .querySelectorAll('img')
-        .map((imgElement) => imgProcesser(imgElement, processOptions))
+        .map(
+          async (imgElement) => await imgProcesser(imgElement, processOptions)
+        )
     )
   }
 
@@ -55,7 +61,10 @@ const processer = async (
     await Promise.all(
       root
         .querySelectorAll('iframe')
-        .map((iframeElement) => iframeProcesser(iframeElement, processOptions))
+        .map(
+          async (iframeElement) =>
+            await iframeProcesser(iframeElement, processOptions)
+        )
     )
   }
 
@@ -63,7 +72,10 @@ const processer = async (
     await Promise.all(
       root
         .querySelectorAll('pre code')
-        .map((codeElement) => codeProcesser(codeElement, processOptions))
+        .map(
+          async (codeElement) =>
+            await codeProcesser(codeElement, processOptions)
+        )
     )
   }
 

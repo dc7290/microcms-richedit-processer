@@ -8,7 +8,7 @@ const codeProcesser = async (
   options: MergedDefaultOptions
 ): Promise<void> => {
   if (options.code.lib === 'highlight.js') {
-    codeElement.innerHTML = hljsHighlight(codeElement.innerText)
+    codeElement.innerHTML = hljsHighlight(codeElement.text)
     codeElement.classList.add('hljs')
   }
 }
