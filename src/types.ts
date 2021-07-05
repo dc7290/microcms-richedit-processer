@@ -1,7 +1,7 @@
 import { QueryParamsInput } from 'ts-imgix'
 
 type CommonOptinos = {
-  disabled?: boolean
+  enabled?: boolean
   addClassName?: string[]
 }
 

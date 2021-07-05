@@ -15,18 +15,18 @@ const defaultOptions = {
     },
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     sizes: '100vw',
-    disabled: false,
+    enabled: true,
     lazy: true,
     placeholder: false,
     provider: 'lazysizes',
   },
   iframe: {
-    disabled: false,
+    enabled: true,
     lazy: true,
     provider: 'lazysizes',
   },
   code: {
-    disabled: false,
+    enabled: false,
     lib: 'highlight.js',
   },
 }
@@ -43,7 +43,7 @@ const processer = async (
 
   const root = parse(content)
 
-  if (!processOptions.img.disabled) {
+  if (processOptions.img.enabled) {
     await Promise.all(
       root
         .querySelectorAll('img')
@@ -51,7 +51,7 @@ const processer = async (
     )
   }
 
-  if (!processOptions.iframe.disabled) {
+  if (processOptions.iframe.enabled) {
     await Promise.all(
       root
         .querySelectorAll('iframe')
@@ -59,7 +59,7 @@ const processer = async (
     )
   }
 
-  if (!processOptions.code.disabled) {
+  if (processOptions.code.enabled) {
     await Promise.all(
       root
         .querySelectorAll('pre code')
