@@ -1,5 +1,6 @@
+import fetch from 'node-fetch'
 import { HTMLElement } from 'node-html-parser'
-import requestImageSize from 'request-image-size'
+import sizeOf from 'image-size'
 import { buildImgixUrl } from 'ts-imgix'
 
 import { MergedDefaultOptions } from '../processer'
@@ -19,7 +20,7 @@ const imgProcesser = async (
 
   const splitSrc = getSrcAttr().split('?')
 
-  const size = await requestImageSize(splitSrc[0])
+  const size = sizeOf(await fetch(splitSrc[0]).then((res) => res.buffer()))
   const imgixParams = Object.assign(
     {},
     new URLSearchParams(splitSrc[1]),
@@ -53,12 +54,12 @@ const imgProcesser = async (
   imgElement.setAttribute('sizes', options.img.sizes)
 
   if (width === null) {
-    imgElement.setAttribute('width', size.width)
+    imgElement.setAttribute('width', size.width?.toString() ?? '')
   } else {
     imgElement.setAttribute('width', width)
   }
   if (height === null) {
-    imgElement.setAttribute('height', size.height)
+    imgElement.setAttribute('height', size.height?.toString() ?? '')
   } else {
     imgElement.setAttribute('height', height)
   }

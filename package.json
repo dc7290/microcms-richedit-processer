@@ -1,6 +1,6 @@
 {
   "name": "microcms-richedit-processer",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "keywords": [
     "microCMS",
     "next",
@@ -31,12 +31,15 @@
   },
   "dependencies": {
     "deepmerge": "^4.2.2",
+    "image-size": "^1.0.0",
+    "node-fetch": "^2.6.1",
     "node-html-parser": "^3.3.6",
     "ts-imgix": "^0.0.15"
   },
   "devDependencies": {
     "@types/deepmerge": "^2.2.0",
     "@types/jest": "^26.0.23",
+    "@types/node-fetch": "^2.5.10",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
     "eslint": "^7.29.0",
