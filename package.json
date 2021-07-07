@@ -1,10 +1,8 @@
 {
   "name": "microcms-richedit-processer",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "keywords": [
     "microCMS",
-    "next",
-    "nextjs",
     "richedit",
     "preprocesser"
   ],

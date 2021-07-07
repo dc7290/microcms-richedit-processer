@@ -9,6 +9,13 @@ const imgProcesser = async (
   imgElement: HTMLElement,
   options: MergedDefaultOptions
 ): Promise<void> => {
+  if (options.img.addAttribute !== undefined) {
+    const attributes = options.img.addAttribute
+    Object.keys(attributes).forEach((key) => {
+      imgElement.setAttribute(key, attributes[key])
+    })
+  }
+
   const getSrcAttr = () => {
     const src = imgElement.getAttribute('src')
     if (src === undefined) {

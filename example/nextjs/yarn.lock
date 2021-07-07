@@ -1931,10 +1931,10 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-microcms-richedit-processer@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/microcms-richedit-processer/-/microcms-richedit-processer-0.4.0.tgz#2808e8cb89dadcb65afd7356fe699cd89f2b1f37"
-  integrity sha512-3QP7lOupvhkvX9u8JMs9RxIeW7NrfG/WTj7mKitUGkC0g2ZQr12KJEr1LWa7zvTdbg5dl4NUVB2DC7FZ8EM2wA==
+microcms-richedit-processer@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/microcms-richedit-processer/-/microcms-richedit-processer-0.5.0.tgz#3f6990e9098cd48ec86067c6c94d174470a7c007"
+  integrity sha512-IOCPP9FXp8L7QGeChVf1IRMoYfdnSi8wYQSCVAz2XtR1/5p8gBrQW6g4V4Yt/YZpf6E+l4pNyCbyh7xY+prg8g==
   dependencies:
     deepmerge "^4.2.2"
     image-size "^1.0.0"

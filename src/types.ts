@@ -3,6 +3,7 @@ import { QueryParamsInput } from 'ts-imgix'
 type CommonOptinos = {
   enabled?: boolean
   addClassName?: string[]
+  addAttribute?: Record<string, string>
 }
 
 type ImgOptions = CommonOptinos & {
