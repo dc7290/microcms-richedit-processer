@@ -94,7 +94,7 @@ const imgProcesser = async (
       imgElement.classList.add('lazyload')
 
       if (options.img.placeholder) {
-        imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30')
+        imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30&blur=10')
         imgElement.setAttribute('style', 'width: 100%')
       } else {
         imgElement.removeAttribute('src')
