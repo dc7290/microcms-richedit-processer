@@ -1824,6 +1824,11 @@ language-tags@^1.0.5:
   dependencies:
     language-subtag-registry "~0.3.2"
 
+lazysizes@^5.3.2:
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-5.3.2.tgz#27f974c26f5fcc33e7db765c0f4930488c8a2984"
+  integrity sha512-22UzWP+Vedi/sMeOr8O7FWimRVtiNJV2HCa+V8+peZOw6QbswN9k58VUhd7i6iK5bw5QkYrF01LJbeJe0PV8jg==
+
 levn@^0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.4.1.tgz#ae4562c007473b932a6200d403268dd2fffc6ade"
@@ -1931,10 +1936,10 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-microcms-richedit-processer@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/microcms-richedit-processer/-/microcms-richedit-processer-0.5.0.tgz#3f6990e9098cd48ec86067c6c94d174470a7c007"
-  integrity sha512-IOCPP9FXp8L7QGeChVf1IRMoYfdnSi8wYQSCVAz2XtR1/5p8gBrQW6g4V4Yt/YZpf6E+l4pNyCbyh7xY+prg8g==
+microcms-richedit-processer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/microcms-richedit-processer/-/microcms-richedit-processer-1.0.0.tgz#16296cd5c00acd0ffda5df7d03ee49117eb5d3cb"
+  integrity sha512-jxD0zb3j7Zh3tCLWNiJBXdQe9KJed2kZcYsHXD38X6d0NRwT6RkP8jFiS9tRvw/HujNNM6FmTLWFmTAONbXBig==
   dependencies:
     deepmerge "^4.2.2"
     image-size "^1.0.0"

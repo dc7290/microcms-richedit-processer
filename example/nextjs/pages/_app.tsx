@@ -1,4 +1,5 @@
 import 'highlight.js/styles/github-dark.css'
+import 'lazysizes'
 
 import { AppProps } from 'next/app'
 

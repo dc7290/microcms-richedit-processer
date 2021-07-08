@@ -1,5 +1,4 @@
 import { GetStaticProps, NextPage } from 'next'
-import Script from 'next/script'
 
 import { processer } from 'microcms-richedit-processer'
 
@@ -40,12 +39,6 @@ const IndexPage: NextPage<Props> = ({
 }) => {
   return (
     <>
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
-        integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
-        crossOrigin="anonymous"
-        referrerPolicy="no-referrer"
-      />
       <style global jsx>{`
         .w-full {
           width: 100%;
