@@ -6,8 +6,8 @@ const iframeProcesser = async (
   iframeElement: HTMLElement,
   options: MergedDefaultOptions
 ): Promise<void> => {
-  if (options.iframe.addAttribute !== undefined) {
-    const attributes = options.iframe.addAttribute
+  if (options.iframe.addAttributes !== undefined) {
+    const attributes = options.iframe.addAttributes
     Object.keys(attributes).forEach((key) => {
       iframeElement.setAttribute(key, attributes[key])
     })

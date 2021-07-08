@@ -6,8 +6,8 @@ const codeProcesser = async (
   codeElement: HTMLElement,
   options: MergedDefaultOptions
 ): Promise<void> => {
-  if (options.code.addAttribute !== undefined) {
-    const attributes = options.code.addAttribute
+  if (options.code.addAttributes !== undefined) {
+    const attributes = options.code.addAttributes
     Object.keys(attributes).forEach((key) => {
       codeElement.setAttribute(key, attributes[key])
     })

@@ -9,8 +9,8 @@ const imgProcesser = async (
   imgElement: HTMLElement,
   options: MergedDefaultOptions
 ): Promise<void> => {
-  if (options.img.addAttribute !== undefined) {
-    const attributes = options.img.addAttribute
+  if (options.img.addAttributes !== undefined) {
+    const attributes = options.img.addAttributes
     Object.keys(attributes).forEach((key) => {
       imgElement.setAttribute(key, attributes[key])
     })
@@ -94,11 +94,13 @@ const imgProcesser = async (
       imgElement.classList.add('lazyload')
 
       if (options.img.placeholder) {
-        imgElement.setAttribute('src', splitSrc[0] + '?w=50&q=30&blur=10')
-        imgElement.setAttribute('style', 'width: 100%')
-      } else {
-        imgElement.removeAttribute('src')
+        imgElement.setAttribute(
+          'data-lowsrc',
+          splitSrc[0] + '?w=50&q=30&blur=10'
+        )
       }
+
+      imgElement.removeAttribute('src')
     }
   }
 }
