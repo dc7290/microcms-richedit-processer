@@ -98,6 +98,7 @@ const imgProcesser = async (
           'data-lowsrc',
           splitSrc[0] + '?w=50&q=30&blur=10'
         )
+        imgElement.removeAttribute('data-src')
       }
 
       imgElement.removeAttribute('src')
