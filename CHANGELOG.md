@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Unreleased]
 
+### Fixed
+
 - update dependencies: example-nextjs ([70367df](https://github.com/dc7290/microcms-richedit-processer/commit/70367dfd695ca11bf3faa2a0e79c5b336f4d6e09))
 
 ---
