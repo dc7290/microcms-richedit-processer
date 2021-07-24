@@ -36,7 +36,7 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 <!-- Versions -->
 
-[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.1...HEAD
 [released]: https://github.com/dc7290/microcms-richedit-processer/releases
 [1.0.1]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/dc7290/microcms-richedit-processer/releases/tag/1.0.0
