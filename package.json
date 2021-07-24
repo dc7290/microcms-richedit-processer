@@ -28,30 +28,30 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "deepmerge": "^4.2.2",
-    "image-size": "^1.0.0",
-    "node-fetch": "^2.6.1",
-    "node-html-parser": "^3.3.6",
-    "ts-imgix": "^0.0.15"
+    "deepmerge": "4.2.2",
+    "image-size": "1.0.0",
+    "node-fetch": "2.6.1",
+    "node-html-parser": "4.1.0",
+    "ts-imgix": "0.0.15"
   },
   "devDependencies": {
-    "@types/deepmerge": "^2.2.0",
-    "@types/jest": "^26.0.23",
-    "@types/node-fetch": "^2.5.10",
-    "@typescript-eslint/eslint-plugin": "^4.28.1",
-    "@typescript-eslint/parser": "^4.28.1",
-    "eslint": "^7.29.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "highlight.js": "^11.0.1",
-    "jest": "^27.0.5",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^2.3.1",
-    "ts-jest": "^27.0.3",
-    "typescript": "^4.3.4"
+    "@types/deepmerge": "2.2.0",
+    "@types/jest": "26.0.24",
+    "@types/node-fetch": "2.5.12",
+    "@typescript-eslint/eslint-plugin": "4.28.4",
+    "@typescript-eslint/parser": "4.28.4",
+    "eslint": "7.31.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "highlight.js": "11.1.0",
+    "jest": "27.0.6",
+    "npm-run-all": "4.1.5",
+    "prettier": "2.3.2",
+    "ts-jest": "27.0.4",
+    "typescript": "4.3.5"
   },
   "peerDependencies": {
-    "highlight.js": "^11.0.1"
+    "highlight.js": "^11.0.0"
   },
   "peerDependenciesMeta": {
     "highlight.js": {
@@ -59,6 +59,6 @@
     }
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=12"
   }
 }
