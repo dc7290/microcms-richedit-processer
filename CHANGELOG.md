@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- update dependencies and devDependencies ([061df85](https://github.com/dc7290/microcms-richedit-processer/commit/061df85ccbe18d2fbc637d404d975d6464c186e0))
+- update dependencies and devDependencies: example-nextjs ([150bd82](https://github.com/dc7290/microcms-richedit-processer/commit/150bd82fb623afe5b42eaa0e50492305bab42e69))
+
 ## [1.0.1] - 2021-07-09
 
 ### Fixed
