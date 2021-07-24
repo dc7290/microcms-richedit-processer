@@ -6,14 +6,16 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Unreleased]
 
+---
+
+## [Released]
+
+## [1.0.2] - 2021-07-24
+
 ### Fixed
 
 - update dependencies and devDependencies ([061df85](https://github.com/dc7290/microcms-richedit-processer/commit/061df85ccbe18d2fbc637d404d975d6464c186e0))
 - update dependencies and devDependencies: example-nextjs ([150bd82](https://github.com/dc7290/microcms-richedit-processer/commit/150bd82fb623afe5b42eaa0e50492305bab42e69))
-
----
-
-## [Released]
 
 ## [1.0.1] - 2021-07-09
 
@@ -36,7 +38,8 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 <!-- Versions -->
 
-[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.1...HEAD
+[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.2...HEAD
 [released]: https://github.com/dc7290/microcms-richedit-processer/releases
+[1.0.2]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/dc7290/microcms-richedit-processer/releases/tag/1.0.0
