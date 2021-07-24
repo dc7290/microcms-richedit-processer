@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog][keep a changelog] and this project adheres to [Semantic Versioning][semantic versioning].
 
 ## [Unreleased]
 
@@ -11,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - update dependencies and devDependencies ([061df85](https://github.com/dc7290/microcms-richedit-processer/commit/061df85ccbe18d2fbc637d404d975d6464c186e0))
 - update dependencies and devDependencies: example-nextjs ([150bd82](https://github.com/dc7290/microcms-richedit-processer/commit/150bd82fb623afe5b42eaa0e50492305bab42e69))
+
+---
+
+## [Released]
 
 ## [1.0.1] - 2021-07-09
 
@@ -24,6 +27,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Everything!
 
-[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.1...HEAD
+---
+
+<!-- Links -->
+
+[keep a changelog]: https://keepachangelog.com/
+[semantic versioning]: https://semver.org/
+
+<!-- Versions -->
+
+[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/v1.0.0...HEAD
+[released]: https://github.com/dc7290/microcms-richedit-processer/releases
 [1.0.1]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/dc7290/microcms-richedit-processer/releases/tag/1.0.0
