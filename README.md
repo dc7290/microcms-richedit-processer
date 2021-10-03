@@ -1,5 +1,7 @@
 # microcms-richedit-processer
 
+[![npm version](https://img.shields.io/npm/v/microcms-richedit-processer)](https://www.npmjs.com/package/microcms-richedit-processer) [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dc7290/microcms-richedit-processer/blob/master/LICENSE) [![downloads](https://img.shields.io/npm/dt/microcms-richedit-processer)](https://www.npmjs.com/package/microcms-richedit-processer)
+
 microCMSのリッチエディタから取得できるHTMLデータを自動処理します。
 
 # Feature
