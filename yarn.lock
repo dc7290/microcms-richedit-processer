@@ -3659,10 +3659,10 @@ tr46@~0.0.3:
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha1-gYT9NH2snNwYWZLzpmIuFLnZq2o=
 
-ts-imgix@0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/ts-imgix/-/ts-imgix-0.0.15.tgz#c0637b6056cbe1c2f02f8950e8bd40e7dc63dad1"
-  integrity sha512-f8nbGVTfu3g0B1dyofYfvPsNb/w76Y34Za2Dgvyv6HCPwQNVwXKUdqCCMKrdZ27cOfhWupN8vdVNsr2RFc80sg==
+ts-imgix@0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/ts-imgix/-/ts-imgix-0.0.18.tgz#7528cdd1a1cb345f83150af56617e768f4445bd4"
+  integrity sha512-sz0FAHfYjhtulbNTjnD8KEMari0JetkJT0veGO/dtzDrxitv+5Z17n7W5OdKV2gRAF07QCUeOuncm5ENfB1uAQ==
   dependencies:
     url-transformers "^0.0.10"
 
