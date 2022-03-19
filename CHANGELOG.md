@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Unreleased]
 
+- update dependencies and devDependencies
+
 ---
 
 ## [Released]
