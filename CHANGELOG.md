@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 ## [Released]
 
+## [1.0.6] - 2022-05-19
+
+### Fixed
+
+- update dependencies and devDependencies
+
 ## [1.0.5] - 2022-03-20
 
 ### Fixed
@@ -57,9 +63,10 @@ The format is based on [Keep a Changelog][keep a changelog] and this project adh
 
 <!-- Versions -->
 
-[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.4...HEAD
+[unreleased]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.6...HEAD
 [released]: https://github.com/dc7290/microcms-richedit-processer/releases
-[1.0.5]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.3...1.0.5
+[1.0.5]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.5...1.0.6
+[1.0.5]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/dc7290/microcms-richedit-processer/compare/1.0.1...1.0.2
