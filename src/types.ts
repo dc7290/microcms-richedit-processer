@@ -1,3 +1,4 @@
+import React from 'react'
 import { QueryParamsInput } from 'ts-imgix'
 
 type CommonOptinos = {
@@ -38,10 +39,16 @@ type CodeOptions = CommonOptinos & {
   lib?: 'highlight.js'
 }
 
+export type OtherElementsOptions = Pick<
+  CommonOptinos,
+  'addAttributes' | 'addClassName'
+>
+
 export type ProcesserOptions = {
   img?: ImgOptions
   iframe?: IframeOptions
   code?: CodeOptions
+  otherElements?: Record<keyof React.ElementType, OtherElementsOptions>
 }
 
 export type CreateTableOfContentsOptions = {

@@ -123,3 +123,21 @@ describe('Process the `pre code`', () => {
     expect(result).toBe(processedContent)
   })
 })
+
+// describe('Process the `other elements`', () => {
+//   it('anchor element', async () => {
+//     const initialContent =
+//       '<a href="/about" rel="noopener noreferrer">To About Page</a>'
+//     const processedContent =
+//       '<a href="/about" rel="noopener noreferrer" target="_blank">To About Page</a>'
+//     const result = await processer(initialContentm, {
+//       otherElements: {
+//         a: {
+//           addAttributes: {
+//             target: '_blank',
+//           },
+//         },
+//       },
+//     })
+//   })
+// })
