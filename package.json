@@ -1,15 +1,22 @@
 {
   "name": "microcms-richedit-processer",
   "version": "1.1.0",
+  "description": "microCMSのリッチエディタから取得した値を加工したり、目次リストを作成します。",
   "keywords": [
     "microCMS",
     "richedit",
     "preprocesser"
   ],
   "homepage": "https://github.com/dc7290/microcms-richedit-processer#readme",
-  "repository": "https://github.com/dc7290/microcms-richedit-processer",
+  "bugs": {
+    "url": "https://github.com/dc7290/next-export-optimize-images/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dc7290/microcms-richedit-processer.git"
+  },
   "license": "MIT",
-  "author": "dc7290",
+  "author": "dc7290 <dhkh.cba0927@gmail.com>",
   "sideEffects": false,
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -20,12 +27,25 @@
     "lib"
   ],
   "scripts": {
-    "build": "rm -rf ./lib && rm -rf ./esm && run-p build:*",
+    "clean:esm": "rm -rf ./esm",
+    "clean:lib": "rm -rf ./lib",
+    "prebuild": "run-p clean:*",
+    "build": "run-p build:*",
     "build:cjs": "tsc --outDir lib",
     "build:esm": "tsc --outDir esm --module esNext",
     "lint": "eslint . --cache",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "semantic-release": "SKIP_BY_SEMANTIC_RELEASE=true semantic-release",
     "test": "jest",
     "test:watch": "jest --watch"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "deepmerge": "4.2.2",
@@ -35,19 +55,28 @@
     "ts-imgix": "0.0.18"
   },
   "devDependencies": {
+    "@commitlint/cli": "17.0.0",
+    "@commitlint/config-conventional": "17.0.0",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/deepmerge": "2.2.0",
     "@types/jest": "27.5.1",
     "@types/node-fetch": "2.6.1",
     "@types/react": "^18.0.9",
-    "@typescript-eslint/eslint-plugin": "5.25.0",
-    "@typescript-eslint/parser": "5.25.0",
+    "@typescript-eslint/eslint-plugin": "5.26.0",
+    "@typescript-eslint/parser": "5.26.0",
+    "conventional-changelog-conventionalcommits": "4.6.3",
     "eslint": "8.16.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
+    "git-cz": "4.9.0",
     "highlight.js": "11.5.1",
+    "husky": "8.0.1",
     "jest": "28.1.0",
+    "lint-staged": "12.4.1",
     "npm-run-all": "4.1.5",
     "prettier": "2.6.2",
+    "semantic-release": "19.0.2",
     "ts-jest": "28.0.2",
     "typescript": "4.6.4"
   },
