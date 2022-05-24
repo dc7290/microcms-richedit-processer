@@ -38,10 +38,18 @@ type CodeOptions = CommonOptinos & {
   lib?: 'highlight.js'
 }
 
+export type OtherElementsOptions = Pick<
+  CommonOptinos,
+  'addAttributes' | 'addClassName'
+>
+
 export type ProcesserOptions = {
   img?: ImgOptions
   iframe?: IframeOptions
   code?: CodeOptions
+  otherElements?: Partial<
+    Record<keyof JSX.IntrinsicElements, OtherElementsOptions>
+  >
 }
 
 export type CreateTableOfContentsOptions = {

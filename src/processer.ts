@@ -3,6 +3,7 @@ import { parse } from 'node-html-parser'
 import codeProcesser from './processers/code'
 import iframeProcesser from './processers/iframe'
 import imgProcesser from './processers/img'
+import otherElementsProcesser from './processers/other-elements'
 
 import { ProcesserOptions } from './types'
 
@@ -29,6 +30,7 @@ const defaultOptions = {
     enabled: false,
     lib: 'highlight.js',
   },
+  otherElements: {},
 }
 
 export type MergedDefaultOptions = typeof defaultOptions & ProcesserOptions
@@ -77,6 +79,18 @@ const processer = async (
             await codeProcesser(codeElement, processOptions)
         )
     )
+  }
+
+  if (Object.keys(processOptions.otherElements).length !== 0) {
+    ;(
+      Object.keys(
+        processOptions.otherElements
+      ) as (keyof JSX.IntrinsicElements)[]
+    ).forEach((key) => {
+      root.querySelectorAll(key).forEach((element) => {
+        otherElementsProcesser(element, processOptions.otherElements[key] ?? {})
+      })
+    })
   }
 
   return root.toString()
