@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dc7290/microcms-richedit-processer.git"
+    "url": "https://github.com/dc7290/microcms-richedit-processer.git"
   },
   "license": "MIT",
   "author": "dc7290 <dhkh.cba0927@gmail.com>",
