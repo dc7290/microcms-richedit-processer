@@ -1,4 +1,3 @@
-import React from 'react'
 import { QueryParamsInput } from 'ts-imgix'
 
 type CommonOptinos = {
@@ -48,7 +47,9 @@ export type ProcesserOptions = {
   img?: ImgOptions
   iframe?: IframeOptions
   code?: CodeOptions
-  otherElements?: Record<keyof React.ElementType, OtherElementsOptions>
+  otherElements?: Partial<
+    Record<keyof JSX.IntrinsicElements, OtherElementsOptions>
+  >
 }
 
 export type CreateTableOfContentsOptions = {
