@@ -9,11 +9,7 @@ import { ProcesserOptions } from './types'
 
 const defaultOptions = {
   img: {
-    parameters: {
-      auto: {
-        format: true,
-      },
-    },
+    parameters: {},
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     sizes: '100vw',
     enabled: true,
