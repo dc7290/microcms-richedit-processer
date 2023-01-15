@@ -1,6 +1,6 @@
 {
   "name": "microcms-richedit-processer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "microCMSのリッチエディタから取得した値を加工したり、目次リストを作成します。",
   "keywords": [
     "microCMS",
