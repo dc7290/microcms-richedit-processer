@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from 'cross-fetch'
 import { HTMLElement } from 'node-html-parser'
 import sizeOf from 'image-size'
 import { buildImgixUrl } from 'ts-imgix'
@@ -27,7 +27,11 @@ const imgProcesser = async (
 
   const splitSrc = getSrcAttr().split('?')
 
-  const size = sizeOf(await fetch(splitSrc[0]).then((res) => res.buffer()))
+  const size = sizeOf(
+    await fetch(splitSrc[0])
+      .then((res) => res.arrayBuffer())
+      .then((buffer) => Buffer.from(buffer))
+  )
   const imgixParams = Object.assign(
     {},
     new URLSearchParams(splitSrc[1]),
