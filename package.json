@@ -50,7 +50,7 @@
   "dependencies": {
     "deepmerge": "4.2.2",
     "image-size": "1.0.2",
-    "node-fetch": "2.6.7",
+    "node-fetch": "3.3.0",
     "node-html-parser": "6.1.4",
     "ts-imgix": "0.0.18"
   },
