@@ -59,7 +59,7 @@
     "@commitlint/config-conventional": "17.4.2",
     "@semantic-release/changelog": "6.0.2",
     "@semantic-release/git": "10.0.1",
-    "@types/deepmerge": "2.2.0",
+    "@types/deepmerge": "2.2.3",
     "@types/jest": "29.2.5",
     "@types/node-fetch": "2.6.1",
     "@types/react": "18.0.26",
