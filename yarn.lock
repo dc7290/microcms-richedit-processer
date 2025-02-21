@@ -1467,10 +1467,10 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/deepmerge@2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@types/deepmerge/-/deepmerge-2.2.0.tgz#6f63896c217f3164782f52d858d9f3a927139f64"
-  integrity sha512-FEQYDHh6+Q+QXKSrIY46m+/lAmAj/bk4KpLaam+hArmzaVpMBHLcfwOH2Q2UOkWM7XsdY9PmZpGyPAjh/JRGhQ==
+"@types/deepmerge@2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@types/deepmerge/-/deepmerge-2.2.3.tgz#0110fa667d8361e8a163498e07a4cabbbba45170"
+  integrity sha512-ct4srnukH/SHdVPyJIFV73YJIt9PTYTaqQbjrCvRrbc9LxHdGcJb132SuWwnDTPyx5UjCVS/I00wj0i5IXfqSA==
   dependencies:
     deepmerge "*"
 
